@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandquest Solutions - End-to-End Revenue Systems for Growth-Focused Brands</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0E27;
+            --accent: #D4AF37;
+            --accent-dark: #B8941F;
+            --text: #1A1A1A;
+            --text-light: #4A4A4A;
+            --bg: #FAFAF8;
+            --bg-alt: #F5F4F0;
+            --border: #E5E3DC;
+            --success: #2D5F3F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .wide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2347 100%);
+            color: white;
+            padding: 120px 0 140px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 64px;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 28px;
+            max-width: 900px;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-subhead {
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 48px;
+            max-width: 720px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-meta {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .hero-credentials {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .credential-item {
+            text-align: left;
+        }
+
+        .credential-value {
+            font-family: 'Crimson Pro', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .credential-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-dark);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+        }
+
+        .section-intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-light);
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--bg-alt);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .problem-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        /* System Section */
+        .system-section {
+            background: white;
+        }
+
+        .system-framework {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2347 100%);
+            padding: 80px 60px;
+            border-radius: 12px;
+            color: white;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-framework::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .system-framework > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .system-step {
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .system-step h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .system-step p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 48px 36px;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--bg-alt);
+        }
+
+        .pricing-intro {
+            background: white;
+            padding: 48px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 60px;
+        }
+
+        .pricing-intro h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .pricing-intro p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 48px 40px;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 16px 60px rgba(212, 175, 55, 0.15);
+        }
+
+        .pricing-card.featured::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 6px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-tier {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-dark);
+            margin-bottom: 16px;
+        }
+
+        .pricing-card h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .pricing-amount {
+            font-family: 'Crimson Pro', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount span {
+            font-size: 20px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .pricing-commitment {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-includes {
+            list-style: none;
+            margin-bottom: 36px;
+        }
+
+        .pricing-includes li {
+            font-size: 15px;
+            color: var(--text);
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .pricing-includes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .pricing-note {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Qualifier Section */
+        .qualifier-section {
+            background: white;
+        }
+
+        .qualifier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 60px;
+        }
+
+        .qualifier-box {
+            padding: 48px;
+            border-radius: 8px;
+        }
+
+        .qualifier-box.ideal {
+            background: linear-gradient(135deg, #2D5F3F 0%, #1e4029 100%);
+            color: white;
+        }
+
+        .qualifier-box.not-for {
+            background: var(--bg-alt);
+            border: 2px solid var(--border);
+        }
+
+        .qualifier-box h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .qualifier-box.not-for h3 {
+            color: var(--primary);
+        }
+
+        .qualifier-list {
+            list-style: none;
+        }
+
+        .qualifier-list li {
+            font-size: 17px;
+            margin-bottom: 18px;
+            padding-left: 32px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .qualifier-box.ideal .qualifier-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .qualifier-box.not-for .qualifier-list li {
+            color: var(--text-light);
+        }
+
+        .qualifier-box.not-for .qualifier-list li::before {
+            content: '×';
+            position: absolute;
+            left: 0;
+            color: #C54545;
+            font-weight: 700;
+            font-size: 26px;
+        }
+
+        /* Authority Section */
+        .authority-section {
+            background: var(--primary);
+            color: white;
+        }
+
+        .authority-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .authority-section h2 {
+            color: white;
+        }
+
+        .authority-section .section-intro {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 auto 60px;
+        }
+
+        .authority-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .authority-pillar {
+            text-align: center;
+        }
+
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .authority-pillar h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .authority-pillar p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-alt);
+            text-align: center;
+        }
+
+        .cta-box {
+            background: white;
+            padding: 80px 60px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid var(--border);
+        }
+
+        .cta-box h2 {
+            margin-bottom: 24px;
+        }
+
+        .cta-box .section-intro {
+            margin: 0 auto 40px;
+        }
+
+        .cta-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin: 50px 0;
+            text-align: left;
+        }
+
+        .process-step {
+            padding-left: 48px;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .process-step h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: var(--bg-alt);
+            padding: 36px 40px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transform: translateX(4px);
+        }
+
+        .faq-item h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        footer .logo {
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        footer p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-subhead {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            .qualifier-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .system-framework {
+                padding: 50px 32px;
+            }
+
+            .cta-box {
+                padding: 50px 32px;
+            }
+
+            .pricing-amount {
+                font-size: 44px;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Brandquest Solutions</div>
+            <a href="https://calendly.com/app/scheduling/meeting_types/user/me?pane=event_type_editor&paneState=ZGVmYXVsdE9wZW5LZXk9YXZhaWxhYmlsaXR5JmlkPTEwODU4MDQ2NSZ0eXBlPVN0YW5kYXJkRXZlbnRUeXBlJm93bmVyVHlwZT1Vc2VyJm93bmVySWQ9MjIxMDc0NjUma2luZD1zb2xv" class="nav-cta">Book Strategy Call</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">For Growth-Focused Brands Spending ₹2L+ Monthly</div>
+            <h1>We build revenue systems that turn ad spend into predictable growth</h1>
+            <div class="hero-subhead">
+                Most agencies run ads. We build complete systems. Meta + Google Ads, revenue-focused SEO, high-converting websites, CRM automation, and attribution that shows exactly where your revenue comes from.
+            </div>
+            <div class="hero-cta-group">
+                <a href="https://calendly.com/app/scheduling/meeting_types/user/me?pane=event_type_editor&paneState=ZGVmYXVsdE9wZW5LZXk9YXZhaWxhYmlsaXR5JmlkPTEwODU4MDQ2NSZ0eXBlPVN0YW5kYXJkRXZlbnRUeXBlJm93bmVyVHlwZT1Vc2VyJm93bmVySWQ9MjIxMDc0NjUma2luZD1zb2xv" class="btn-primary">Book Your Strategy Call</a>
+                <span class="hero-meta">90-minute deep dive into your growth roadmap</span>
+            </div>
+            <div class="hero-credentials">
+                <div class="credential-item">
+                    <div class="credential-value">15+ Years</div>
+                    <div class="credential-label">Building revenue systems for growth brands</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-value">5 Channels</div>
+                    <div class="credential-label">Working together, not in isolation</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-value">6-12 Months</div>
+                    <div class="credential-label">Minimum partnership timeline</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-section">
+        <div class="container">
+            <span class="section-label">The Real Problem</span>
+            <h2>Running ads without a system is expensive guesswork</h2>
+            <div class="section-intro">
+                You are spending lakhs every month on ads. Traffic comes in. Some leads convert, most disappear. No one follows up systematically. You have no idea which channels actually drive revenue. Your website does not convert. Multiple agencies, zero accountability.
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Leads fall into a black hole</h3>
+                    <p>You pay for clicks. Leads come in. But there is no system to qualify them, nurture them, or track what happens next. Most revenue opportunities just disappear.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>No one owns the outcome</h3>
+                    <p>Your ads agency blames the website. The web team blames the leads. The CRM sits unused. Everyone points fingers. No one takes ownership of revenue.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>You cannot see where revenue comes from</h3>
+                    <p>Which campaign drove that sale? Which keyword? Which landing page? You are flying blind because your tracking is broken and attribution does not exist.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Growth stops when ad spend stops</h3>
+                    <p>You are completely dependent on paid ads. No SEO. No organic compounding. No long-term assets. Just an expensive treadmill you cannot step off.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Your website actively kills conversions</h3>
+                    <p>Slow, confusing, generic. Built by a vendor who disappeared. Your landing pages convert at 1% when they should be at 5%. Every day costs you revenue.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>You are locked into short-term thinking</h3>
+                    <p>Agencies want monthly retainers with no commitment. They optimise for their convenience, not your growth. No one is building systems that compound.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="system-section">
+        <div class="container">
+            <span class="section-label">The Solution</span>
+            <h2>A complete revenue system, not disconnected tactics</h2>
+            <div class="section-intro">
+                We do not just run ads. We build end-to-end revenue systems where every element works together. Ads drive qualified traffic. Websites convert that traffic. CRM captures and nurtures every lead. SEO compounds your paid efforts. Attribution shows you exactly what is working.
+            </div>
+            <div class="system-framework">
+                <h3 style="font-size: 32px; margin-bottom: 16px; font-family: 'Crimson Pro', serif;">The Revenue System Framework</h3>
+                <p style="font-size: 18px; margin-bottom: 40px; color: rgba(255,255,255,0.9);">Five interconnected elements that turn ad spend into predictable, scalable revenue</p>
+                <div class="system-steps">
+                    <div class="system-step">
+                        <div class="step-number">1</div>
+                        <h4>Demand Capture</h4>
+                        <p>Meta and Google Ads engineered to drive qualified traffic at your target CAC, with full-funnel tracking from first click to closed revenue.</p>
+                    </div>
+                    <div class="system-step">
+                        <div class="step-number">2</div>
+                        <h4>Conversion Infrastructure</h4>
+                        <p>Landing pages and websites built to convert, not just look good. Every element tested and optimised for your specific audience and offer.</p>
+                    </div>
+                    <div class="system-step">
+                        <div class="step-number">3</div>
+                        <h4>Lead Intelligence</h4>
+                        <p>CRM setup and automation that captures every lead, qualifies them instantly, and routes them to the right nurture sequence or sales process.</p>
+                    </div>
+                    <div class="system-step">
+                        <div class="step-number">4</div>
+                        <h4>Organic Compounding</h4>
+                        <p>Revenue-focused SEO that compounds your paid efforts, reduces dependency on ads, and builds long-term organic acquisition channels.</p>
+                    </div>
+                    <div class="system-step">
+                        <div class="step-number">5</div>
+                        <h4>Revenue Attribution</h4>
+                        <p>Know exactly which campaigns, keywords, and channels drive actual revenue. Not just leads or clicks, but closed business and LTV.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-alt); padding: 100px 0;">
+        <div class="container">
+            <span class="section-label">What We Do</span>
+            <h2>The services inside the system</h2>
+            <div class="section-intro">
+                These are not standalone services you pick from a menu. They are integrated components of a revenue system, designed to work together from day one.
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Performance Ads</h3>
+                    <p>Meta and Google Ads managed as a revenue channel, not a vanity metric factory.</p>
+                    <ul class="service-features">
+                        <li>Full-funnel campaign architecture</li>
+                        <li>Creative testing and iteration</li>
+                        <li>Landing page and offer alignment</li>
+                        <li>CAC optimisation and scaling</li>
+                        <li>Revenue attribution, not just ROAS</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Revenue-Focused SEO</h3>
+                    <p>Organic traffic that compounds paid efforts and reduces acquisition costs over time.</p>
+                    <ul class="service-features">
+                        <li>Technical SEO and site speed</li>
+                        <li>High-intent keyword targeting</li>
+                        <li>Content that ranks and converts</li>
+                        <li>Backlink acquisition strategies</li>
+                        <li>Organic compounding over 6-12 months</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Conversion Websites</h3>
+                    <p>Websites and landing pages engineered to convert traffic into revenue, not just showcase your brand.</p>
+                    <ul class="service-features">
+                        <li>Conversion-first page architecture</li>
+                        <li>Speed and performance optimisation</li>
+                        <li>A/B testing infrastructure</li>
+                        <li>Mobile and cross-device perfection</li>
+                        <li>Messaging aligned to acquisition channels</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>CRM & Automation</h3>
+                    <p>Capture, qualify, and nurture every lead with automated workflows that turn interest into revenue.</p>
+                    <ul class="service-features">
+                        <li>Full CRM setup and configuration</li>
+                        <li>Email and WhatsApp automation</li>
+                        <li>Lead scoring and qualification</li>
+                        <li>Sales pipeline integration</li>
+                        <li>Automated follow-up sequences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <span class="section-label">Investment & Engagement</span>
+            <h2>How we structure partnerships</h2>
+            <div class="section-intro">
+                We do not sell services by the hour or month-to-month retainers. We build revenue systems over 6-12 month partnerships with founders who are serious about sustainable growth.
+            </div>
+            <div class="pricing-intro">
+                <h3>Engagement models are discussed on your strategy call</h3>
+                <p>Every business has different starting points, goals, and constraints. We do not believe in one-size-fits-all packages. Instead, we offer three engagement frameworks that we customise during your strategy call based on your specific situation.</p>
+                <p>The ranges below give you context on investment levels. Exact scope, timeline, and pricing are finalised after we understand your business in depth.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Foundation System</div>
+                    <h3>Entry Point</h3>
+                    <div class="pricing-amount">₹1,00,000<span>/month</span></div>
+                    <div class="pricing-commitment">Minimum 3-month commitment</div>
+                    <ul class="pricing-includes">
+                        <li>Meta OR Google Ads (single platform)</li>
+                        <li>Website conversion optimisation (existing site)</li>
+                        <li>Basic SEO (technical + on-page)</li>
+                        <li>CRM setup and templated automation</li>
+                        <li>Monthly performance reporting</li>
+                    </ul>
+                    <p class="pricing-note">For businesses ready to create structure and visibility before scaling</p>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-tier">Growth System</div>
+                    <h3>Most Common</h3>
+                    <div class="pricing-amount">₹1,50,000<span>/month</span></div>
+                    <div class="pricing-commitment">Minimum 6-month commitment</div>
+                    <ul class="pricing-includes">
+                        <li>Meta + Google Ads (full-funnel)</li>
+                        <li>Custom landing pages built for conversion</li>
+                        <li>Revenue-focused SEO for compounding traffic</li>
+                        <li>Full CRM with email and WhatsApp automation</li>
+                        <li>Lead nurturing and attribution dashboards</li>
+                        <li>Bi-weekly strategy and optimisation calls</li>
+                    </ul>
+                    <p class="pricing-note">For brands ready to build a complete revenue system and scale predictably</p>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Scale System</div>
+                    <h3>Premium</h3>
+                    <div class="pricing-amount">₹2,00,000<span>/month</span></div>
+                    <div class="pricing-commitment">Minimum 6-month commitment</div>
+                    <ul class="pricing-includes">
+                        <li>Advanced ad scaling across Meta + Google</li>
+                        <li>Full website build or complete rebuild</li>
+                        <li>Advanced SEO and ongoing CRO experiments</li>
+                        <li>Enterprise CRM with attribution and LTV tracking</li>
+                        <li>Custom workflows and sales enablement</li>
+                        <li>Founder-level oversight and priority access</li>
+                    </ul>
+                    <p class="pricing-note">Limited to 5 clients. For businesses ready to scale aggressively with full system support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="qualifier-section">
+        <div class="container">
+            <span class="section-label">Client Qualification</span>
+            <h2>Who we work with (and who we do not)</h2>
+            <div class="section-intro">
+                We are selective about partnerships. This work only succeeds when both sides are committed to the long-term and have realistic expectations about timelines and investment.
+            </div>
+            <div class="qualifier-grid">
+                <div class="qualifier-box ideal">
+                    <h3>This is for you if:</h3>
+                    <ul class="qualifier-list">
+                        <li>You are already spending ₹2-10L monthly on ads and want better returns</li>
+                        <li>You are a founder or decision-maker who can commit to a 6-12 month partnership</li>
+                        <li>You understand that systems take time to build and compound</li>
+                        <li>You are frustrated with agencies that do not own outcomes</li>
+                        <li>You want one partner accountable for the entire revenue system</li>
+                        <li>You are willing to invest in infrastructure, not just short-term tactics</li>
+                    </ul>
+                </div>
+                <div class="qualifier-box not-for">
+                    <h3>This is not for you if:</h3>
+                    <ul class="qualifier-list">
+                        <li>You are looking for cheap freelancers or entry-level agencies</li>
+                        <li>You want to test us for a month and then decide</li>
+                        <li>You expect results in 30 days without building proper infrastructure</li>
+                        <li>You are not ready to invest at least ₹1L per month in the system</li>
+                        <li>You prefer managing multiple vendors instead of one integrated partner</li>
+                        <li>You are looking for someone to just execute your ideas without strategic input</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="authority-section">
+        <div class="container">
+            <div class="authority-content">
+                <span class="section-label" style="color: var(--accent);">Why This Works</span>
+                <h2>Built on systems, not services</h2>
+                <div class="section-intro">
+                    After 15 years building revenue systems for growth brands across D2C, services, education, real estate, and healthcare, we have learned what actually drives predictable growth. It is not tactics. It is systems.
+                </div>
+                <div class="authority-pillars">
+                    <div class="authority-pillar">
+                        <div class="pillar-icon">🎯</div>
+                        <h4>Revenue, Not Vanity</h4>
+                        <p>We optimise for closed revenue and LTV, not clicks, impressions, or leads that go nowhere.</p>
+                    </div>
+                    <div class="authority-pillar">
+                        <div class="pillar-icon">🔗</div>
+                        <h4>Integrated, Not Isolated</h4>
+                        <p>Every channel works together. Ads feed SEO. SEO feeds retargeting. CRM connects everything to revenue.</p>
+                    </div>
+                    <div class="authority-pillar">
+                        <div class="pillar-icon">📈</div>
+                        <h4>Compounding, Not Linear</h4>
+                        <p>We build systems that get stronger over time. SEO compounds. Data compounds. Efficiency improves month over month.</p>
+                    </div>
+                    <div class="authority-pillar">
+                        <div class="pillar-icon">🤝</div>
+                        <h4>Partnership, Not Transaction</h4>
+                        <p>We commit to 6-12 month timelines because that is how long it takes to build systems that scale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="book-call">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Let's talk about your revenue system</h2>
+                <div class="section-intro">
+                    If you are spending ₹2L+ per month on ads and frustrated with poor returns, broken funnels, or agencies that do not own outcomes, book a 90-minute strategy call. We will audit your current setup, identify revenue leaks, and map out a system that actually scales.
+                </div>
+                <div class="cta-process">
+                    <div class="process-step" data-number="1">
+                        <h4>Book Your Call</h4>
+                        <p>Choose a time that works for you. No sales pressure, just strategy.</p>
+                    </div>
+                    <div class="process-step" data-number="2">
+                        <h4>Deep Dive Audit</h4>
+                        <p>We analyse your ads, website, funnel, and attribution to find revenue leaks.</p>
+                    </div>
+                    <div class="process-step" data-number="3">
+                        <h4>Custom Roadmap</h4>
+                        <p>We show you exactly what a revenue system would look like for your business.</p>
+                    </div>
+                    <div class="process-step" data-number="4">
+                        <h4>Decide Together</h4>
+                        <p>If it is a fit, we move forward. If not, you leave with a clear plan anyway.</p>
+                    </div>
+                </div>
+                <a href="https://calendly.com/app/scheduling/meeting_types/user/me?pane=event_type_editor&paneState=ZGVmYXVsdE9wZW5LZXk9YXZhaWxhYmlsaXR5JmlkPTEwODU4MDQ2NSZ0eXBlPVN0YW5kYXJkRXZlbnRUeXBlJm93bmVyVHlwZT1Vc2VyJm93bmVySWQ9MjIxMDc0NjUma2luZD1zb2xv" class="btn-primary" style="margin-top: 20px;">Book Your Strategy Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <span class="section-label">Common Questions</span>
+            <h2>What founders ask before booking</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Why does pricing start at ₹1,00,000 per month?</h3>
+                    <p>Because building a complete revenue system requires significant time, expertise, and infrastructure. We are not running ads in isolation. We are building and integrating ads, SEO, websites, CRM, automation, and attribution. That requires a senior team working across multiple disciplines for months. Cheaper options exist, but they deliver disconnected tactics, not systems. If your goal is sustainable, scalable growth, the investment is justified by the outcome.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long before we see results?</h3>
+                    <p>Paid ads can show directional results in 30-60 days, but we are building systems, not running quick tests. Expect 90 days to build the foundation, 6 months to see compounding effects from SEO and automation, and 12 months to have a truly optimised revenue machine. Anyone promising overnight results is lying or setting you up for disappointment.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why not just hire a cheaper agency or freelancer?</h3>
+                    <p>You can. But cheaper partners rarely own outcomes. They run ads or build websites in isolation. When results are poor, everyone points fingers. You end up managing multiple vendors, stitching together disconnected tools, and still wondering where your revenue is coming from. We exist for founders tired of that chaos and ready to invest in a single partner who owns the entire system.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What commitment do you expect from us?</h3>
+                    <p>Minimum 3-6 months depending on the engagement level. We also need timely access to your team for content, approvals, and integration work. Systems only succeed when both sides are committed. If you are looking to test us for 30 days, this will not work. If you are serious about building something that lasts, we are all in.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you work with startups or only established businesses?</h3>
+                    <p>We work with both, but you need to be spending at least ₹2L per month on ads already, or ready to start immediately. If you are pre-revenue or pre-product-market-fit, this is too early. Come back when you have validated demand and are ready to scale acquisition systematically.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What industries do you work with?</h3>
+                    <p>D2C, services, education, real estate, healthcare, and professional services. The system applies across industries, but we are selective about fit. If your business model is complex, highly regulated, or requires deep vertical expertise we do not have, we will tell you on the strategy call.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: white; padding: 100px 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <span class="section-label">Get In Touch</span>
+                <h2 style="text-align: center;">Or send us a message</h2>
+                <p style="text-align: center; font-size: 18px; color: var(--text-light); margin-bottom: 50px;">
+                    Prefer to reach out directly? Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+                <form id="contactForm" action="https://formspree.io/f/xlglwdrp" method="POST" style="background: var(--bg-alt); padding: 48px; border-radius: 8px; border: 2px solid var(--border);">
+                    <input type="hidden" name="_subject" value="New Lead from Brandquest Solutions Landing Page">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Your Name *</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Your Role *</label>
+                            <select name="role" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                                <option value="">Select your role</option>
+                                <option value="founder">Founder / Co-Founder</option>
+                                <option value="ceo">CEO / Managing Director</option>
+                                <option value="cmo">CMO / Head of Marketing</option>
+                                <option value="growth">Head of Growth</option>
+                                <option value="other">Other Decision Maker</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Email Address *</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Phone Number *</label>
+                            <input type="tel" name="phone" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Company / Brand Name *</label>
+                        <input type="text" name="company" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Industry *</label>
+                        <select name="industry" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                            <option value="">Select your industry</option>
+                            <option value="d2c">D2C / E-commerce</option>
+                            <option value="services">Professional Services</option>
+                            <option value="education">Education / EdTech</option>
+                            <option value="realestate">Real Estate</option>
+                            <option value="healthcare">Healthcare / Wellness</option>
+                            <option value="saas">SaaS / Technology</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Current Monthly Ad Spend *</label>
+                            <select name="adspend" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                                <option value="">Select range</option>
+                                <option value="less-than-2l">Less than ₹2L</option>
+                                <option value="2l-5l">₹2L - ₹5L</option>
+                                <option value="5l-10l">₹5L - ₹10L</option>
+                                <option value="10l-plus">₹10L+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Commitment Timeline *</label>
+                            <select name="timeline" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                                <option value="">How long are you thinking?</option>
+                                <option value="3-months">3 months minimum</option>
+                                <option value="6-months">6 months preferred</option>
+                                <option value="12-months">12+ months commitment</option>
+                                <option value="exploring">Just exploring options</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 12px; color: var(--primary);">Which channels are you currently using? *</label>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="channels" value="meta" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Meta Ads (Facebook/Instagram)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="channels" value="google" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Google Ads</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="channels" value="seo" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">SEO</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="channels" value="website" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Website / Landing Pages</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="channels" value="crm" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">CRM / Automation</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="channels" value="none" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">None / Starting fresh</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">What's your biggest challenge right now? *</label>
+                        <select name="challenge" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                            <option value="">Select your main challenge</option>
+                            <option value="poor-roas">Poor ROAS / Ad performance</option>
+                            <option value="lead-quality">Low quality leads</option>
+                            <option value="no-followup">Leads not followed up</option>
+                            <option value="website-conversion">Website doesn't convert</option>
+                            <option value="no-tracking">No attribution / tracking</option>
+                            <option value="multiple-vendors">Managing multiple vendors</option>
+                            <option value="scaling">Can't scale profitably</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 12px; color: var(--primary);">Which services are you most interested in? *</label>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="services" value="meta-ads" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Meta Ads Management</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="services" value="google-ads" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Google Ads Management</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="services" value="seo" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Revenue-Focused SEO</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="services" value="website" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Website / Landing Pages</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="services" value="crm" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">CRM & Automation</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="services" value="full-system" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Complete Revenue System</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Budget Range for Engagement *</label>
+                            <select name="budget" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                                <option value="">Select budget range</option>
+                                <option value="less-than-1l">Less than ₹1L/month</option>
+                                <option value="1l-1.5l">₹1L - ₹1.5L/month</option>
+                                <option value="1.5l-2l">₹1.5L - ₹2L/month</option>
+                                <option value="2l-plus">₹2L+/month</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">When do you want to start? *</label>
+                            <select name="starttime" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                                <option value="">Select timeline</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="1-2-weeks">1-2 weeks</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="2-3-months">2-3 months</option>
+                                <option value="exploring">Just exploring</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Current Team Size *</label>
+                        <select name="teamsize" required style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                            <option value="">Select team size</option>
+                            <option value="solo">Solo founder / 1-2 people</option>
+                            <option value="small">3-10 people</option>
+                            <option value="medium">11-50 people</option>
+                            <option value="large">50+ people</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 12px; color: var(--primary);">What are your specific platform challenges?</label>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="meta-high-cac" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Meta: High CAC / Poor ROAS</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="meta-creative" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Meta: Creative fatigue / Low CTR</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="google-keywords" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Google: Wrong keywords / High CPC</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="google-quality-score" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Google: Low quality scores</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="seo-not-ranking" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">SEO: Not ranking / No organic traffic</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="website-slow" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Website: Slow / Poor mobile experience</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="website-conversion" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">Website: Low conversion rate</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="crm-not-used" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">CRM: Not set up or not being used</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="platform-challenges" value="crm-no-automation" style="width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 15px;">CRM: No automation or follow-up</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Website URL</label>
+                        <input type="url" name="website" placeholder="https://" style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                    </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Tell us more about your goals and current situation *</label>
+                        <textarea name="message" required rows="5" placeholder="Share details about your business, revenue goals, current challenges, and what you're hoping to achieve..." style="width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 4px; font-size: 16px; font-family: 'Work Sans', sans-serif; resize: vertical; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+                    </div>
+
+                    <button type="submit" style="width: 100%; background: var(--accent); color: var(--primary); padding: 18px 40px; border-radius: 4px; font-weight: 700; font-size: 17px; border: 2px solid var(--accent); cursor: pointer; transition: all 0.3s ease; font-family: 'Work Sans', sans-serif;" onmouseover="this.style.background='var(--accent-dark)'; this.style.borderColor='var(--accent-dark)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--accent)'; this.style.borderColor='var(--accent)'; this.style.transform='translateY(0)'">
+                        Send Message
+                    </button>
+                    <p style="margin-top: 16px; font-size: 14px; color: var(--text-light); text-align: center;">
+                        We'll respond within 24 hours with next steps
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">Brandquest Solutions</div>
+            <p>Building predictable growth engines for ambitious brands.</p>
+            <p style="margin-top: 32px; font-size: 13px;">© 2026 Brandquest Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
